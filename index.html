@@ -12,142 +12,145 @@
       color:#fff;
       text-align:center;
     }
-
-    header{
-      padding:70px 20px;
+    header{padding:60px 20px}
+    h1{font-size:46px;margin-bottom:10px}
+    .lang-btn{
+      margin-top:15px;
+      padding:8px 18px;
+      border:none;
+      border-radius:20px;
+      background:#fff;
+      color:#000;
+      font-size:14px;
+      cursor:pointer;
     }
-
-    h1{
-      font-size:50px;
-      margin-bottom:10px;
-    }
-
-    header p{
-      font-size:18px;
-      opacity:0.9;
-    }
-
-    .container{
-      max-width:700px;
-      margin:0 auto;
-      padding:20px;
-    }
-
+    .container{max-width:780px;margin:auto;padding:20px}
     .box{
       background:rgba(0,0,0,0.45);
-      border-radius:14px;
+      border-radius:16px;
       padding:30px;
       margin-bottom:30px;
     }
-
-    h2{
-      margin-top:0;
-      color:#4caf50;
-    }
-
-    .info{
-      font-size:18px;
-      line-height:1.8;
-    }
-
+    h2{color:#4caf50}
     .server-box{
       background:rgba(255,255,255,0.08);
-      border-radius:10px;
-      padding:15px;
-      margin:15px 0;
-      font-size:17px;
+      border-radius:12px;
+      padding:18px;
+      margin:18px 0;
     }
-
-    .label{
-      color:#a5ffb0;
-      font-weight:bold;
-    }
-
-    a.button{
-      display:inline-block;
-      margin-top:20px;
-      padding:14px 32px;
+    .label{color:#a5ffb0;font-weight:bold}
+    .value{font-size:20px;margin:8px 0}
+    button.copy{
+      padding:8px 18px;
+      border:none;
+      border-radius:8px;
       background:#4caf50;
-      color:white;
-      text-decoration:none;
-      border-radius:10px;
-      font-size:18px;
+      color:#fff;
+      cursor:pointer;
     }
-
-    a.button:hover{
-      background:#43a047;
+    footer{opacity:.6;margin:30px}
+    .toast{
+      position:fixed;bottom:20px;left:50%;
+      transform:translateX(-50%);
+      background:#000;padding:10px 20px;
+      border-radius:10px;opacity:0;
+      transition:.3s
     }
-
-    footer{
-      margin:40px 0 20px;
-      font-size:14px;
-      opacity:0.6;
-    }
+    .toast.show{opacity:.85}
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>bananeko server</h1>
-    <p>Java版・統合版 両対応 マインクラフトサーバー</p>
-  </header>
+<header>
+  <h1 id="title">bananeko server</h1>
+  <p id="subtitle">Java版・統合版 両対応 マインクラフトサーバー</p>
+  <button class="lang-btn" onclick="toggleLang()">🌐 日本語 / English</button>
+</header>
 
-  <div class="container">
+<div class="container">
 
-    <div class="box">
-      <h2>サーバー紹介</h2>
-      <p class="info">
-        bananeko serverは、<br>
-        初心者から上級者まで楽しめる<br>
-        みんなで遊ぶサバイバルサーバーです！<br>
-        24時間いつでも参加OK！
-      </p>
-    </div>
-
-    <div class="box">
-      <h2>参加方法</h2>
-
-      <div class="server-box">
-        <span class="label">対応バージョン：</span><br>
-        Java版 / 統合版（Bedrock）どちらでも参加可能
-      </div>
-
-      <div class="server-box">
-        <span class="label">【Java版】</span><br>
-        サーバーアドレス：<br>
-        <strong>bananeko.xgames.jp</strong>
-      </div>
-
-      <div class="server-box">
-        <span class="label">【統合版】</span><br>
-        サーバーアドレス：<br>
-        <strong>bananeko.xgames.jp</strong><br>
-        ポート：<strong>25565</strong>
-      </div>
-
-      <div class="server-box">
-        <span class="label">フレンドから参加</span><br>
-        フレンド名：<br>
-        <strong>bananekoSRV3</strong>
-      </div>
-    </div>
-
-    <div class="box">
-      <h2>コミュニティ</h2>
-      <p class="info">
-        Discordで最新情報や雑談、<br>
-        サポートも受けられます！
-      </p>
-      <a class="button" href="https://discord.gg/XCv8DzxnJG" target="_blank">
-        Discordに参加
-      </a>
-    </div>
-
+  <div class="box">
+    <h2 id="aboutTitle">サーバー紹介</h2>
+    <p id="aboutText">
+      初心者から上級者まで楽しめる<br>
+      24時間参加可能なサバイバルサーバーです！
+    </p>
   </div>
 
-  <footer>
-    © bananeko server
-  </footer>
+  <div class="box">
+    <h2 id="joinTitle">参加方法</h2>
+
+    <div class="server-box">
+      <div class="label" id="supportLabel">対応バージョン</div>
+      <div class="value" id="supportText">Java版 / 統合版（Bedrock）</div>
+    </div>
+
+    <div class="server-box">
+      <div class="label">Java</div>
+      <div class="value" id="java">bananeko.xgames.jp</div>
+      <button class="copy" onclick="copyText('java')">Copy</button>
+    </div>
+
+    <div class="server-box">
+      <div class="label">Bedrock</div>
+      <div class="value" id="bedrock">bananeko.xgames.jp</div>
+      <button class="copy" onclick="copyText('bedrock')">Copy</button>
+    </div>
+
+    <div class="server-box">
+      <div class="label" id="portLabel">ポート</div>
+      <div class="value" id="port">25565</div>
+      <button class="copy" onclick="copyText('port')">Copy</button>
+    </div>
+
+    <div class="server-box">
+      <div class="label" id="friendLabel">フレンド参加</div>
+      <div class="value" id="friend">bananekoSRV3</div>
+      <button class="copy" onclick="copyText('friend')">Copy</button>
+    </div>
+  </div>
+
+</div>
+
+<footer>© bananeko server</footer>
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+let lang = "jp";
+
+function toggleLang(){
+  lang = lang === "jp" ? "en" : "jp";
+  if(lang === "en"){
+    title.innerText = "bananeko server";
+    subtitle.innerText = "Java & Bedrock Crossplay Minecraft Server";
+    aboutTitle.innerText = "About Server";
+    aboutText.innerHTML =
+      "A survival server anyone can enjoy.<br>24/7 Online!";
+    joinTitle.innerText = "How to Join";
+    supportLabel.innerText = "Supported Versions";
+    supportText.innerText = "Java / Bedrock Edition";
+    portLabel.innerText = "Port";
+    friendLabel.innerText = "Join via Friends";
+  }else{
+    title.innerText = "bananeko server";
+    subtitle.innerText = "Java版・統合版 両対応 マインクラフトサーバー";
+    aboutTitle.innerText = "サーバー紹介";
+    aboutText.innerHTML =
+      "初心者から上級者まで楽しめる<br>24時間参加可能なサバイバルサーバーです！";
+    joinTitle.innerText = "参加方法";
+    supportLabel.innerText = "対応バージョン";
+    supportText.innerText = "Java版 / 統合版（Bedrock）";
+    portLabel.innerText = "ポート";
+    friendLabel.innerText = "フレンド参加";
+  }
+}
+
+function copyText(id){
+  navigator.clipboard.writeText(document.getElementById(id).innerText);
+  toast.classList.add("show");
+  setTimeout(()=>toast.classList.remove("show"),1200);
+}
+</script>
 
 </body>
 </html>
