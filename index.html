@@ -5,55 +5,83 @@
   <title>bananeko server</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
-      color: white;
-      text-align: center;
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+      color:#fff;
+      text-align:center;
     }
 
-    header {
-      padding: 60px 20px;
+    header{
+      padding:70px 20px;
     }
 
-    h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
+    h1{
+      font-size:50px;
+      margin-bottom:10px;
     }
 
-    p {
-      font-size: 18px;
-      opacity: 0.9;
+    header p{
+      font-size:18px;
+      opacity:0.9;
     }
 
-    .box {
-      background: rgba(0,0,0,0.4);
-      margin: 40px auto;
-      padding: 30px;
-      max-width: 500px;
-      border-radius: 12px;
+    .container{
+      max-width:700px;
+      margin:0 auto;
+      padding:20px;
     }
 
-    a.button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
-      background: #4caf50;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 18px;
+    .box{
+      background:rgba(0,0,0,0.45);
+      border-radius:14px;
+      padding:30px;
+      margin-bottom:30px;
     }
 
-    a.button:hover {
-      background: #43a047;
+    h2{
+      margin-top:0;
+      color:#4caf50;
     }
 
-    footer {
-      margin: 40px 0 20px;
-      font-size: 14px;
-      opacity: 0.6;
+    .info{
+      font-size:18px;
+      line-height:1.8;
+    }
+
+    .server-box{
+      background:rgba(255,255,255,0.08);
+      border-radius:10px;
+      padding:15px;
+      margin:15px 0;
+      font-size:17px;
+    }
+
+    .label{
+      color:#a5ffb0;
+      font-weight:bold;
+    }
+
+    a.button{
+      display:inline-block;
+      margin-top:20px;
+      padding:14px 32px;
+      background:#4caf50;
+      color:white;
+      text-decoration:none;
+      border-radius:10px;
+      font-size:18px;
+    }
+
+    a.button:hover{
+      background:#43a047;
+    }
+
+    footer{
+      margin:40px 0 20px;
+      font-size:14px;
+      opacity:0.6;
     }
   </style>
 </head>
@@ -61,20 +89,60 @@
 
   <header>
     <h1>bananeko server</h1>
-    <p>みんなで楽しむマインクラフトサーバー</p>
+    <p>Java版・統合版 両対応 マインクラフトサーバー</p>
   </header>
 
-  <div class="box">
-    <h2>サーバーについて</h2>
-    <p>
-      bananeko serverは、<br>
-      誰でも参加できるオンラインサバイバルサーバーです。<br>
-      初心者も大歓迎！
-    </p>
+  <div class="container">
 
-    <a class="button" href="https://discord.gg/XCv8DzxnJG" target="_blank">
-      Discordに参加
-    </a>
+    <div class="box">
+      <h2>サーバー紹介</h2>
+      <p class="info">
+        bananeko serverは、<br>
+        初心者から上級者まで楽しめる<br>
+        みんなで遊ぶサバイバルサーバーです！<br>
+        24時間いつでも参加OK！
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>参加方法</h2>
+
+      <div class="server-box">
+        <span class="label">対応バージョン：</span><br>
+        Java版 / 統合版（Bedrock）どちらでも参加可能
+      </div>
+
+      <div class="server-box">
+        <span class="label">【Java版】</span><br>
+        サーバーアドレス：<br>
+        <strong>bananeko.xgames.jp</strong>
+      </div>
+
+      <div class="server-box">
+        <span class="label">【統合版】</span><br>
+        サーバーアドレス：<br>
+        <strong>bananeko.xgames.jp</strong><br>
+        ポート：<strong>25565</strong>
+      </div>
+
+      <div class="server-box">
+        <span class="label">フレンドから参加</span><br>
+        フレンド名：<br>
+        <strong>bananekoSRV3</strong>
+      </div>
+    </div>
+
+    <div class="box">
+      <h2>コミュニティ</h2>
+      <p class="info">
+        Discordで最新情報や雑談、<br>
+        サポートも受けられます！
+      </p>
+      <a class="button" href="https://discord.gg/XCv8DzxnJG" target="_blank">
+        Discordに参加
+      </a>
+    </div>
+
   </div>
 
   <footer>
