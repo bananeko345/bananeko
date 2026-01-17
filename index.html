@@ -1,71 +1,111 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <!-- ===== SEO 基本 ===== -->
-  <title>bananeko server | Java・統合版対応マイクラサーバー</title>
-  <meta name="description" content="bananeko serverはJava版・統合版対応のマインクラフトサーバーです。初心者歓迎、誰でも無料で参加可能！">
-  <meta name="keywords" content="bananeko, bananeko server, マイクラサーバー, Minecraft, Java版, 統合版, クロスプレイ">
-  <meta name="author" content="bananeko server">
-  <meta name="robots" content="index, follow">
+<!-- ===== SEO ===== -->
+<title>bananeko server | Java・統合版対応マイクラサーバー</title>
+<meta name="description" content="bananeko serverはJava版・統合版対応のマインクラフトサーバーです。初心者歓迎・無料で参加可能！">
+<meta name="keywords" content="bananeko, bananeko server, マイクラサーバー, Minecraft, Java版, 統合版">
+<meta name="author" content="bananeko server">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- スマホ対応 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- OGP -->
+<meta property="og:title" content="bananeko server">
+<meta property="og:description" content="Java版・統合版対応マイクラサーバー">
+<meta property="og:url" content="https://bananeko.qzz.io/">
+<meta property="og:type" content="website">
 
-  <!-- ===== OGP（Discord・X用） ===== -->
-  <meta property="og:title" content="bananeko server">
-  <meta property="og:description" content="Java版・統合版対応のマインクラフトサーバー">
-  <meta property="og:url" content="https://bananeko.qzz.io/">
-  <meta property="og:type" content="website">
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui, sans-serif;
+  color:#fff;
+  overflow-x:hidden;
+}
 
-  <!-- ===== 構造化データ（SEO強化） ===== -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "GameServer",
-    "name": "bananeko server",
-    "url": "https://bananeko.qzz.io/",
-    "game": "Minecraft",
-    "description": "Java版・統合版対応のマインクラフトサーバー",
-    "serverStatus": "Online"
-  }
-  </script>
+/* ===== 背景アニメーション ===== */
+.bg{
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%, #ffcc0060, transparent 40%),
+    radial-gradient(circle at 80% 30%, #00ccff60, transparent 40%),
+    radial-gradient(circle at 50% 80%, #ff006060, transparent 40%),
+    linear-gradient(120deg, #050505, #0a0a0a);
+  animation:bgmove 15s infinite alternate ease-in-out;
+  z-index:-1;
+}
 
-  <style>
-    body{
-      margin:0;
-      font-family:system-ui, sans-serif;
-      background:#0e0e0e;
-      color:#fff;
-      text-align:center;
-    }
-    header{
-      padding:60px 20px;
-      background:linear-gradient(135deg,#ffcc00,#ff9900);
-      color:#000;
-    }
-    section{padding:40px 20px}
-    a.button{
-      display:inline-block;
-      margin:10px;
-      padding:14px 24px;
-      background:#ffcc00;
-      color:#000;
-      text-decoration:none;
-      border-radius:8px;
-      font-weight:bold;
-    }
-    footer{
-      padding:20px;
-      background:#000;
-      font-size:14px;
-      opacity:.8;
-    }
-  </style>
+@keyframes bgmove{
+  0%{filter:hue-rotate(0deg)}
+  100%{filter:hue-rotate(40deg)}
+}
+
+/* ===== レイアウト ===== */
+header{
+  padding:80px 20px;
+  text-align:center;
+  backdrop-filter:blur(6px);
+}
+header h1{
+  font-size:48px;
+  margin:0;
+  letter-spacing:2px;
+}
+header p{
+  font-size:18px;
+  opacity:.9;
+}
+
+section{
+  max-width:900px;
+  margin:40px auto;
+  padding:30px;
+  background:rgba(0,0,0,.55);
+  border-radius:16px;
+  box-shadow:0 0 30px #000;
+}
+
+h2{
+  border-left:4px solid #ffcc00;
+  padding-left:10px;
+}
+
+.buttons{
+  text-align:center;
+}
+
+a.button{
+  display:inline-block;
+  margin:12px;
+  padding:14px 28px;
+  background:linear-gradient(135deg,#ffcc00,#ff9900);
+  color:#000;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:999px;
+  transition:.25s;
+}
+a.button:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 15px #ffcc00;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+  opacity:.7;
+}
+</style>
 </head>
 
 <body>
+
+<div class="bg"></div>
 
 <header>
   <h1>bananeko server</h1>
@@ -73,7 +113,7 @@
 </header>
 
 <section>
-  <h2>🌟 bananeko serverとは？</h2>
+  <h2>🌟 bananeko serverとは</h2>
   <p>
     bananeko serverは、Java版・統合版どちらからでも参加できる  
     クロスプレイ対応のマインクラフトサーバーです。  
@@ -85,28 +125,21 @@
   <h2>🎮 コンテンツ</h2>
   <p>
     ・サバイバル<br>
-    ・みんなで協力プレイ<br>
+    ・協力プレイ<br>
     ・イベント開催予定<br>
     ・安心・安全な運営
   </p>
 </section>
 
-<section>
+<section class="buttons">
   <h2>🚀 メニュー</h2>
-  <a class="button" href="join.html">▶ 参加方法</a>
-  <a class="button" href="faq.html">❓ FAQ</a>
-  <a class="button" href="https://discord.gg/XCv8DzxnJG" target="_blank">💬 Discord参加</a>
-</section>
-
-<section>
-  <h2>🔍 検索キーワード</h2>
-  <p>
-    bananeko / bananeko server / マイクラサーバー / Minecraft Java 統合版
-  </p>
+  <a class="button" href="join.html">参加方法</a>
+  <a class="button" href="faq.html">FAQ</a>
+  <a class="button" href="https://discord.gg/XCv8DzxnJG" target="_blank">Discord参加</a>
 </section>
 
 <footer>
-  © 2026 bananeko server | All Rights Reserved
+  © 2026 bananeko server
 </footer>
 
 </body>
