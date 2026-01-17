@@ -30,23 +30,7 @@ h1{font-size:46px;margin-bottom:10px}
   margin-bottom:30px;
 }
 h2{color:#4caf50}
-.server-box{
-  background:rgba(255,255,255,.08);
-  border-radius:12px;
-  padding:18px;
-  margin:18px 0;
-}
-.label{color:#a5ffb0;font-weight:bold}
-.value{font-size:20px;margin:8px 0;word-break:break-all}
-button.copy{
-  padding:8px 18px;
-  border:none;
-  border-radius:8px;
-  background:#4caf50;
-  color:#fff;
-  cursor:pointer;
-}
-a.discord,a.button{
+a.button,a.discord{
   display:inline-block;
   margin-top:15px;
   padding:14px 32px;
@@ -55,21 +39,9 @@ a.discord,a.button{
   border-radius:12px;
   font-size:18px;
 }
-a.discord{background:#5865F2}
 a.button{background:#4caf50}
+a.discord{background:#5865F2}
 footer{opacity:.6;margin:30px}
-.toast{
-  position:fixed;
-  bottom:20px;
-  left:50%;
-  transform:translateX(-50%);
-  background:#000;
-  padding:10px 20px;
-  border-radius:10px;
-  opacity:0;
-  transition:.3s;
-}
-.toast.show{opacity:.85}
 </style>
 </head>
 
@@ -83,7 +55,7 @@ footer{opacity:.6;margin:30px}
 
 <div class="container">
 
-  <!-- 紹介 -->
+  <!-- サーバー紹介 -->
   <div class="box">
     <h2 id="aboutTitle">サーバー紹介</h2>
     <p id="aboutText">
@@ -93,34 +65,14 @@ footer{opacity:.6;margin:30px}
     </p>
   </div>
 
-  <!-- 参加方法 -->
+  <!-- 参加方法リンク -->
   <div class="box">
     <h2 id="joinTitle">参加方法</h2>
-
-    <div class="server-box">
-      <div class="label" id="supportLabel">対応バージョン</div>
-      <div class="value" id="supportText">Java版 / 統合版（Bedrock）</div>
-    </div>
-
-    <div class="server-box">
-      <div class="label">Java Edition</div>
-      <div class="value" id="java">bananeko.xgames.jp</div>
-      <button class="copy" onclick="copyText('java')">Copy</button>
-    </div>
-
-    <div class="server-box">
-      <div class="label">Bedrock / 統合版</div>
-      <div class="value" id="bedrock">
-        bananeko.xgames.jp<br>Port: 25565
-      </div>
-      <button class="copy" onclick="copyText('bedrock')">Copy</button>
-    </div>
-
-    <div class="server-box">
-      <div class="label" id="friendLabel">フレンドから参加</div>
-      <div class="value" id="friend">bananekoSRV3</div>
-      <button class="copy" onclick="copyText('friend')">Copy</button>
-    </div>
+    <p id="joinText">
+      Java版・統合版どちらからでも参加できます。<br>
+      詳しい参加方法はこちら！
+    </p>
+    <a class="button" href="join.html">参加方法を見る</a>
   </div>
 
   <!-- FAQ -->
@@ -148,8 +100,6 @@ footer{opacity:.6;margin:30px}
 
 <footer>© bananeko server</footer>
 
-<div class="toast" id="toast">Copied!</div>
-
 <script>
 let lang="jp";
 
@@ -160,9 +110,7 @@ function toggleLang(){
     aboutTitle.innerText="About Server";
     aboutText.innerHTML="A survival server anyone can enjoy.<br>Online 24/7!";
     joinTitle.innerText="How to Join";
-    supportLabel.innerText="Supported Versions";
-    supportText.innerText="Java / Bedrock Edition";
-    friendLabel.innerText="Join via Friends";
+    joinText.innerHTML="You can join from Java or Bedrock.<br>See details here!";
     faqText.innerHTML="Frequently asked questions.<br>Check here first!";
     discordTitle.innerText="Community";
     discordText.innerText="Join our Discord for news, chat and support!";
@@ -171,21 +119,11 @@ function toggleLang(){
     aboutTitle.innerText="サーバー紹介";
     aboutText.innerHTML="初心者から上級者まで楽しめる<br>24時間いつでも参加可能な<br>サバイバルサーバーです！";
     joinTitle.innerText="参加方法";
-    supportLabel.innerText="対応バージョン";
-    supportText.innerText="Java版 / 統合版（Bedrock）";
-    friendLabel.innerText="フレンドから参加";
+    joinText.innerHTML="Java版・統合版どちらからでも参加できます。<br>詳しい参加方法はこちら！";
     faqText.innerHTML="よくある質問をまとめました。<br>困ったらまずはこちら！";
     discordTitle.innerText="コミュニティ";
     discordText.innerText="Discordで最新情報・雑談・サポートができます！";
   }
-}
-
-function copyText(id){
-  navigator.clipboard.writeText(
-    document.getElementById(id).innerText.replace(/\n/g," ")
-  );
-  toast.classList.add("show");
-  setTimeout(()=>toast.classList.remove("show"),1200);
 }
 </script>
 
