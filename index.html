@@ -1,131 +1,113 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>bananeko server</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  color:#fff;
-  text-align:center;
-}
-header{padding:60px 20px}
-h1{font-size:46px;margin-bottom:10px}
-.lang-btn{
-  margin-top:15px;
-  padding:8px 18px;
-  border:none;
-  border-radius:20px;
-  background:#fff;
-  cursor:pointer;
-}
-.container{max-width:820px;margin:auto;padding:20px}
-.box{
-  background:rgba(0,0,0,.45);
-  border-radius:16px;
-  padding:30px;
-  margin-bottom:30px;
-}
-h2{color:#4caf50}
-a.button,a.discord{
-  display:inline-block;
-  margin-top:15px;
-  padding:14px 32px;
-  color:#fff;
-  text-decoration:none;
-  border-radius:12px;
-  font-size:18px;
-}
-a.button{background:#4caf50}
-a.discord{background:#5865F2}
-footer{opacity:.6;margin:30px}
-</style>
+  <meta charset="UTF-8">
+
+  <!-- ===== SEO 基本 ===== -->
+  <title>bananeko server | Java・統合版対応マイクラサーバー</title>
+  <meta name="description" content="bananeko serverはJava版・統合版対応のマインクラフトサーバーです。初心者歓迎、誰でも無料で参加可能！">
+  <meta name="keywords" content="bananeko, bananeko server, マイクラサーバー, Minecraft, Java版, 統合版, クロスプレイ">
+  <meta name="author" content="bananeko server">
+  <meta name="robots" content="index, follow">
+
+  <!-- スマホ対応 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== OGP（Discord・X用） ===== -->
+  <meta property="og:title" content="bananeko server">
+  <meta property="og:description" content="Java版・統合版対応のマインクラフトサーバー">
+  <meta property="og:url" content="https://bananeko.qzz.io/">
+  <meta property="og:type" content="website">
+
+  <!-- ===== 構造化データ（SEO強化） ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GameServer",
+    "name": "bananeko server",
+    "url": "https://bananeko.qzz.io/",
+    "game": "Minecraft",
+    "description": "Java版・統合版対応のマインクラフトサーバー",
+    "serverStatus": "Online"
+  }
+  </script>
+
+  <style>
+    body{
+      margin:0;
+      font-family:system-ui, sans-serif;
+      background:#0e0e0e;
+      color:#fff;
+      text-align:center;
+    }
+    header{
+      padding:60px 20px;
+      background:linear-gradient(135deg,#ffcc00,#ff9900);
+      color:#000;
+    }
+    section{padding:40px 20px}
+    a.button{
+      display:inline-block;
+      margin:10px;
+      padding:14px 24px;
+      background:#ffcc00;
+      color:#000;
+      text-decoration:none;
+      border-radius:8px;
+      font-weight:bold;
+    }
+    footer{
+      padding:20px;
+      background:#000;
+      font-size:14px;
+      opacity:.8;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <h1 id="title">bananeko server</h1>
-  <p id="subtitle">Java版・統合版 両対応 マインクラフトサーバー</p>
-  <button class="lang-btn" onclick="toggleLang()">🌐 日本語 / English</button>
+  <h1>bananeko server</h1>
+  <p>Java版・統合版対応 マインクラフトサーバー</p>
 </header>
 
-<div class="container">
+<section>
+  <h2>🌟 bananeko serverとは？</h2>
+  <p>
+    bananeko serverは、Java版・統合版どちらからでも参加できる  
+    クロスプレイ対応のマインクラフトサーバーです。  
+    初心者から上級者まで、誰でも安心して遊べます。
+  </p>
+</section>
 
-  <!-- サーバー紹介 -->
-  <div class="box">
-    <h2 id="aboutTitle">サーバー紹介</h2>
-    <p id="aboutText">
-      初心者から上級者まで楽しめる<br>
-      24時間いつでも参加可能な<br>
-      サバイバルサーバーです！
-    </p>
-  </div>
+<section>
+  <h2>🎮 コンテンツ</h2>
+  <p>
+    ・サバイバル<br>
+    ・みんなで協力プレイ<br>
+    ・イベント開催予定<br>
+    ・安心・安全な運営
+  </p>
+</section>
 
-  <!-- 参加方法リンク -->
-  <div class="box">
-    <h2 id="joinTitle">参加方法</h2>
-    <p id="joinText">
-      Java版・統合版どちらからでも参加できます。<br>
-      詳しい参加方法はこちら！
-    </p>
-    <a class="button" href="join.html">参加方法を見る</a>
-  </div>
+<section>
+  <h2>🚀 メニュー</h2>
+  <a class="button" href="join.html">▶ 参加方法</a>
+  <a class="button" href="faq.html">❓ FAQ</a>
+  <a class="button" href="https://discord.gg/XCv8DzxnJG" target="_blank">💬 Discord参加</a>
+</section>
 
-  <!-- FAQ -->
-  <div class="box">
-    <h2>FAQ</h2>
-    <p id="faqText">
-      よくある質問をまとめました。<br>
-      困ったらまずはこちら！
-    </p>
-    <a class="button" href="FAQ.html">FAQを見る</a>
-  </div>
+<section>
+  <h2>🔍 検索キーワード</h2>
+  <p>
+    bananeko / bananeko server / マイクラサーバー / Minecraft Java 統合版
+  </p>
+</section>
 
-  <!-- Discord -->
-  <div class="box">
-    <h2 id="discordTitle">コミュニティ</h2>
-    <p id="discordText">
-      Discordで最新情報・雑談・サポートができます！
-    </p>
-    <a class="discord" href="https://discord.gg/XCv8DzxnJG" target="_blank">
-      Discordに参加
-    </a>
-  </div>
-
-</div>
-
-<footer>© bananeko server</footer>
-
-<script>
-let lang="jp";
-
-function toggleLang(){
-  lang = lang==="jp" ? "en" : "jp";
-  if(lang==="en"){
-    subtitle.innerText="Java & Bedrock Crossplay Minecraft Server";
-    aboutTitle.innerText="About Server";
-    aboutText.innerHTML="A survival server anyone can enjoy.<br>Online 24/7!";
-    joinTitle.innerText="How to Join";
-    joinText.innerHTML="You can join from Java or Bedrock.<br>See details here!";
-    faqText.innerHTML="Frequently asked questions.<br>Check here first!";
-    discordTitle.innerText="Community";
-    discordText.innerText="Join our Discord for news, chat and support!";
-  }else{
-    subtitle.innerText="Java版・統合版 両対応 マインクラフトサーバー";
-    aboutTitle.innerText="サーバー紹介";
-    aboutText.innerHTML="初心者から上級者まで楽しめる<br>24時間いつでも参加可能な<br>サバイバルサーバーです！";
-    joinTitle.innerText="参加方法";
-    joinText.innerHTML="Java版・統合版どちらからでも参加できます。<br>詳しい参加方法はこちら！";
-    faqText.innerHTML="よくある質問をまとめました。<br>困ったらまずはこちら！";
-    discordTitle.innerText="コミュニティ";
-    discordText.innerText="Discordで最新情報・雑談・サポートができます！";
-  }
-}
-</script>
+<footer>
+  © 2026 bananeko server | All Rights Reserved
+</footer>
 
 </body>
 </html>
