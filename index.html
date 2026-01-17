@@ -1,64 +1,77 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>bananeko server</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body{
-      margin:0;
-      font-family:Arial, sans-serif;
-      background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-      color:#fff;
-      text-align:center;
-    }
-    header{padding:60px 20px}
-    h1{font-size:46px;margin-bottom:10px}
-    .lang-btn{
-      margin-top:15px;
-      padding:8px 18px;
-      border:none;
-      border-radius:20px;
-      background:#fff;
-      color:#000;
-      font-size:14px;
-      cursor:pointer;
-    }
-    .container{max-width:780px;margin:auto;padding:20px}
-    .box{
-      background:rgba(0,0,0,0.45);
-      border-radius:16px;
-      padding:30px;
-      margin-bottom:30px;
-    }
-    h2{color:#4caf50}
-    .server-box{
-      background:rgba(255,255,255,0.08);
-      border-radius:12px;
-      padding:18px;
-      margin:18px 0;
-    }
-    .label{color:#a5ffb0;font-weight:bold}
-    .value{font-size:20px;margin:8px 0}
-    button.copy{
-      padding:8px 18px;
-      border:none;
-      border-radius:8px;
-      background:#4caf50;
-      color:#fff;
-      cursor:pointer;
-    }
-    footer{opacity:.6;margin:30px}
-    .toast{
-      position:fixed;bottom:20px;left:50%;
-      transform:translateX(-50%);
-      background:#000;padding:10px 20px;
-      border-radius:10px;opacity:0;
-      transition:.3s
-    }
-    .toast.show{opacity:.85}
-  </style>
+<meta charset="UTF-8">
+<title>bananeko server</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+  text-align:center;
+}
+header{padding:60px 20px}
+h1{font-size:46px;margin-bottom:10px}
+.lang-btn{
+  margin-top:15px;
+  padding:8px 18px;
+  border:none;
+  border-radius:20px;
+  background:#fff;
+  cursor:pointer;
+}
+.container{max-width:800px;margin:auto;padding:20px}
+.box{
+  background:rgba(0,0,0,.45);
+  border-radius:16px;
+  padding:30px;
+  margin-bottom:30px;
+}
+h2{color:#4caf50}
+.server-box{
+  background:rgba(255,255,255,.08);
+  border-radius:12px;
+  padding:18px;
+  margin:18px 0;
+}
+.label{color:#a5ffb0;font-weight:bold}
+.value{font-size:20px;margin:8px 0;word-break:break-all}
+button.copy{
+  padding:8px 18px;
+  border:none;
+  border-radius:8px;
+  background:#4caf50;
+  color:#fff;
+  cursor:pointer;
+}
+a.discord{
+  display:inline-block;
+  margin-top:15px;
+  padding:14px 32px;
+  background:#5865F2;
+  color:#fff;
+  text-decoration:none;
+  border-radius:12px;
+  font-size:18px;
+}
+footer{opacity:.6;margin:30px}
+.toast{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#000;
+  padding:10px 20px;
+  border-radius:10px;
+  opacity:0;
+  transition:.3s;
+}
+.toast.show{opacity:.85}
+</style>
 </head>
+
 <body>
 
 <header>
@@ -73,7 +86,8 @@
     <h2 id="aboutTitle">サーバー紹介</h2>
     <p id="aboutText">
       初心者から上級者まで楽しめる<br>
-      24時間参加可能なサバイバルサーバーです！
+      24時間いつでも参加可能な<br>
+      サバイバルサーバーです！
     </p>
   </div>
 
@@ -86,67 +100,74 @@
     </div>
 
     <div class="server-box">
-      <div class="label">Java</div>
+      <div class="label">Java Edition</div>
       <div class="value" id="java">bananeko.xgames.jp</div>
       <button class="copy" onclick="copyText('java')">Copy</button>
     </div>
 
     <div class="server-box">
-      <div class="label">Bedrock</div>
-      <div class="value" id="bedrock">bananeko.xgames.jp</div>
+      <div class="label">Bedrock / 統合版</div>
+      <div class="value" id="bedrock">
+        bananeko.xgames.jp<br>Port: 25565
+      </div>
       <button class="copy" onclick="copyText('bedrock')">Copy</button>
     </div>
 
     <div class="server-box">
-      <div class="label" id="portLabel">ポート</div>
-      <div class="value" id="port">25565</div>
-      <button class="copy" onclick="copyText('port')">Copy</button>
-    </div>
-
-    <div class="server-box">
-      <div class="label" id="friendLabel">フレンド参加</div>
+      <div class="label" id="friendLabel">フレンドから参加</div>
       <div class="value" id="friend">bananekoSRV3</div>
       <button class="copy" onclick="copyText('friend')">Copy</button>
     </div>
   </div>
 
+  <div class="box">
+    <h2 id="discordTitle">コミュニティ</h2>
+    <p id="discordText">
+      Discordで最新情報・雑談・サポートができます！
+    </p>
+    <a class="discord" href="https://discord.gg/XCv8DzxnJG" target="_blank">
+      Discordに参加
+    </a>
+  </div>
+
 </div>
 
 <footer>© bananeko server</footer>
+
 <div class="toast" id="toast">Copied!</div>
 
 <script>
-let lang = "jp";
+let lang="jp";
 
 function toggleLang(){
-  lang = lang === "jp" ? "en" : "jp";
-  if(lang === "en"){
-    title.innerText = "bananeko server";
-    subtitle.innerText = "Java & Bedrock Crossplay Minecraft Server";
-    aboutTitle.innerText = "About Server";
-    aboutText.innerHTML =
-      "A survival server anyone can enjoy.<br>24/7 Online!";
-    joinTitle.innerText = "How to Join";
-    supportLabel.innerText = "Supported Versions";
-    supportText.innerText = "Java / Bedrock Edition";
-    portLabel.innerText = "Port";
-    friendLabel.innerText = "Join via Friends";
+  lang = lang==="jp" ? "en" : "jp";
+  if(lang==="en"){
+    subtitle.innerText="Java & Bedrock Crossplay Minecraft Server";
+    aboutTitle.innerText="About Server";
+    aboutText.innerHTML="A survival server anyone can enjoy.<br>Online 24/7!";
+    joinTitle.innerText="How to Join";
+    supportLabel.innerText="Supported Versions";
+    supportText.innerText="Java / Bedrock Edition";
+    friendLabel.innerText="Join via Friends";
+    discordTitle.innerText="Community";
+    discordText.innerText="Join our Discord for news, chat and support!";
   }else{
-    title.innerText = "bananeko server";
-    subtitle.innerText = "Java版・統合版 両対応 マインクラフトサーバー";
-    aboutTitle.innerText = "サーバー紹介";
-    aboutText.innerHTML =
-      "初心者から上級者まで楽しめる<br>24時間参加可能なサバイバルサーバーです！";
-    joinTitle.innerText = "参加方法";
-    supportLabel.innerText = "対応バージョン";
-    supportText.innerText = "Java版 / 統合版（Bedrock）";
-    portLabel.innerText = "ポート";
-    friendLabel.innerText = "フレンド参加";
+    subtitle.innerText="Java版・統合版 両対応 マインクラフトサーバー";
+    aboutTitle.innerText="サーバー紹介";
+    aboutText.innerHTML="初心者から上級者まで楽しめる<br>24時間いつでも参加可能な<br>サバイバルサーバーです！";
+    joinTitle.innerText="参加方法";
+    supportLabel.innerText="対応バージョン";
+    supportText.innerText="Java版 / 統合版（Bedrock）";
+    friendLabel.innerText="フレンドから参加";
+    discordTitle.innerText="コミュニティ";
+    discordText.innerText="Discordで最新情報・雑談・サポートができます！";
   }
 }
 
 function copyText(id){
-  navigator.clipboard.writeText(document.getElementById(id).innerText);
+  navigator.clipboard.writeText(
+    document.getElementById(id).innerText.replace(/\n/g," ")
+  );
   toast.classList.add("show");
   setTimeout(()=>toast.classList.remove("show"),1200);
 }
