@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bananeko server</title>
 
-<title>bananeko server | Java・統合版対応マイクラサーバー</title>
-<meta name="description" content="bananeko serverはJava版・統合版対応のマインクラフトサーバーです。初心者歓迎。">
-
+<meta name="description" content="bananeko serverはJava版・統合版対応のマインクラフトサーバーです。">
 <meta name="google-site-verification" content="5gyn_ooNVz2XFZp-heBsin_Enh5kqpnlnxh0YrpgefU" />
 
 <style>
@@ -36,15 +35,21 @@ nav a:hover{color:#1e88e5}
   background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.65))
 }
 .hero-content{
-  position:relative;max-width:1200px;margin:auto;color:#fff;padding:0 20px
+  position:relative;max-width:1200px;margin:auto;
+  color:#fff;padding:0 20px
 }
 .hero h2{font-size:42px;margin-bottom:10px}
+.hero p{margin-bottom:40px}
+
 .hero a{
-  background:#1e88e5;color:#fff;padding:14px 28px;
-  text-decoration:none;border-radius:6px;font-weight:bold
+  background:#1e88e5;color:#fff;
+  padding:14px 28px;border-radius:6px;
+  text-decoration:none;font-weight:bold;
+  display:inline-block;
+  margin-top:20px; /* ← 少し下に */
 }
 
-/* section common */
+/* common */
 .section{padding:100px 20px}
 .inner{max-width:1200px;margin:auto}
 
@@ -57,18 +62,15 @@ nav a:hover{color:#1e88e5}
   box-shadow:0 10px 30px rgba(0,0,0,.15)
 }
 
-/* HOW TO PLAY */
-.howto{
-  background:#fff;
-}
-.howto-title{
-  text-align:center;margin-bottom:40px
-}
+/* how to */
+.howto{background:#fff}
+.howto-title{text-align:center;margin-bottom:40px}
 .howto-title span{
   color:#8aa4b8;font-weight:bold;letter-spacing:2px
 }
+
 .rule-btn{
-  display:block;max-width:400px;margin:20px auto;
+  display:block;max-width:420px;margin:20px auto;
   background:#0d4c7d;color:#fff;text-align:center;
   padding:14px;border-radius:6px;text-decoration:none
 }
@@ -84,21 +86,46 @@ nav a:hover{color:#1e88e5}
   flex:1;background:#f4f6f8;border-radius:12px;
   padding:20px;box-shadow:0 6px 20px rgba(0,0,0,.08)
 }
-.howto-card h3{
-  margin-bottom:15px;color:#0d4c7d
-}
+.howto-card h3{color:#0d4c7d;margin-bottom:10px}
 .howto-card img{
-  width:100%;border-radius:10px
+  width:100%;border-radius:10px;margin-top:10px
 }
+
+/* friend */
+.friend{
+  margin-top:60px;
+  border:3px solid #0d4c7d;
+  border-radius:12px;
+  padding:30px;
+  display:flex;
+  gap:30px;
+  flex-wrap:wrap;
+  background:#fff;
+}
+.friend h3{
+  background:#0d4c7d;
+  color:#fff;
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:6px;
+  margin-bottom:15px;
+}
+.friend img{
+  width:100%;
+  max-width:520px;
+  border-radius:10px;
+}
+.friend-text{flex:1}
 
 /* footer */
 footer{
-  background:#111;color:#ccc;text-align:center;padding:30px 10px
+  background:#111;color:#ccc;
+  text-align:center;padding:30px 10px
 }
 
 @media(max-width:900px){
   .hero h2{font-size:32px}
-  .about-box,.howto-box{flex-direction:column}
+  .about-box,.howto-box,.friend{flex-direction:column}
 }
 </style>
 </head>
@@ -124,7 +151,6 @@ footer{
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="section">
   <div class="inner about-box">
     <div>
@@ -132,13 +158,12 @@ footer{
     </div>
     <div>
       <h2>bananeko server とは？</h2>
-      <p>Java版・統合版対応のマインクラフトマルチプレイサーバーです。</p>
-      <p>初心者から上級者まで、安心して遊べるコミュニティを目指しています。</p>
+      <p>Java版・統合版対応のマインクラフトサーバーです。</p>
+      <p>初心者でも安心して参加できるコミュニティを目指しています。</p>
     </div>
   </div>
 </section>
 
-<!-- HOW TO PLAY -->
 <section class="section howto" id="howto">
   <div class="inner">
 
@@ -147,11 +172,10 @@ footer{
       <h2>サーバーへの入り方</h2>
     </div>
 
-    <p style="text-align:center">参加する前にルールを確認しよう！</p>
     <a class="rule-btn" href="#">ルールを確認する</a>
 
     <div class="server-address">
-      サーバーアドレス：<br>
+      サーバーアドレス<br>
       bananeko.xgames.jp
     </div>
 
@@ -160,14 +184,32 @@ footer{
         <h3>Java版</h3>
         <p>マルチプレイ → サーバー追加</p>
         <p>アドレス：bananeko.xgames.jp</p>
-        <img src="https://via.placeholder.com/600x350?text=Java+Edition">
       </div>
 
       <div class="howto-card">
         <h3>統合版（Bedrock）</h3>
         <p>サーバー追加</p>
         <p>アドレス：bananeko.xgames.jp<br>ポート：25565</p>
-        <img src="https://via.placeholder.com/600x350?text=Bedrock+Edition">
+      </div>
+    </div>
+
+    <!-- フレンド参加 -->
+    <div class="friend">
+      <div>
+        <h3>フレンド申請での参加方法</h3>
+        <img src="https://via.placeholder.com/520x300?text=Friend+Join">
+      </div>
+
+      <div class="friend-text">
+        <p>
+          統合版限定で、フレンド申請を行ってサーバーに参加することができます。
+        </p>
+        <p>
+          <b>MCID：bananekoSRV3</b> にフレンド申請を送信してください。
+        </p>
+        <p>
+          数分待つと、フレンドタブに「bananeko server」が表示されます。
+        </p>
       </div>
     </div>
 
