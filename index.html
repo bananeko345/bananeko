@@ -5,185 +5,100 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>bananeko server | Java・統合版対応マイクラサーバー</title>
-<meta name="description" content="bananeko serverはJava版・統合版対応のマインクラフトサーバーです。初心者歓迎、誰でも参加できます。">
+<meta name="description" content="bananeko serverはJava版・統合版対応のマインクラフトサーバーです。初心者歓迎。">
 
-<!-- Google Search Console -->
 <meta name="google-site-verification" content="5gyn_ooNVz2XFZp-heBsin_Enh5kqpnlnxh0YrpgefU" />
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:"Segoe UI",sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",sans-serif}
+body{background:#f4f6f8;color:#222;line-height:1.7}
 
-body{
-  background:#f4f6f8;
-  color:#222;
-  line-height:1.7;
-}
-
-/* ===== ヘッダー ===== */
+/* header */
 header{
-  position:fixed;
-  top:0;
-  width:100%;
-  background:#fff;
-  box-shadow:0 2px 10px rgba(0,0,0,.08);
-  z-index:100;
+  position:fixed;top:0;width:100%;background:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);z-index:100
 }
-
 .header-inner{
-  max-width:1200px;
-  margin:auto;
-  padding:14px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  max-width:1200px;margin:auto;padding:14px 20px;
+  display:flex;justify-content:space-between;align-items:center
 }
+nav a{margin-left:20px;text-decoration:none;color:#333}
+nav a:hover{color:#1e88e5}
 
-header h1{
-  font-size:20px;
-}
-
-nav a{
-  margin-left:20px;
-  text-decoration:none;
-  color:#333;
-  font-weight:500;
-}
-
-nav a:hover{
-  color:#1e88e5;
-}
-
-/* ===== ヒーロー ===== */
+/* hero */
 .hero{
   height:100vh;
   background:url("https://raw.githubusercontent.com/bananeko345/bananeko/refs/heads/main/EmiOuakVMAIemdR.jpg") center/cover no-repeat;
-  position:relative;
-  display:flex;
-  align-items:center;
-  padding:0 20px;
+  position:relative;display:flex;align-items:center
 }
-
 .hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.65));
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.65))
 }
-
 .hero-content{
-  position:relative;
-  max-width:1200px;
-  margin:auto;
-  color:#fff;
+  position:relative;max-width:1200px;margin:auto;color:#fff;padding:0 20px
 }
-
-.hero h2{
-  font-size:42px;
-  margin-bottom:10px;
-}
-
-.hero p{
-  font-size:18px;
-  margin-bottom:25px;
-}
-
+.hero h2{font-size:42px;margin-bottom:10px}
 .hero a{
-  background:#1e88e5;
-  color:#fff;
-  padding:14px 28px;
-  text-decoration:none;
-  border-radius:6px;
-  font-weight:bold;
+  background:#1e88e5;color:#fff;padding:14px 28px;
+  text-decoration:none;border-radius:6px;font-weight:bold
 }
 
-.hero a:hover{
-  background:#1565c0;
-}
+/* section common */
+.section{padding:100px 20px}
+.inner{max-width:1200px;margin:auto}
 
-/* ===== ABOUT ===== */
-.about{
-  padding:100px 20px;
-  background:#f4f6f8;
-}
-
-.about-inner{
-  max-width:1200px;
-  margin:auto;
-}
-
-.about-title{
-  text-align:center;
-  margin-bottom:50px;
-}
-
-.about-title span{
-  color:#8aa4b8;
-  font-weight:bold;
-  letter-spacing:2px;
-}
-
-.about-title h2{
-  font-size:32px;
-  margin-top:10px;
-}
-
+/* about */
 .about-box{
-  display:flex;
-  gap:40px;
-  align-items:center;
-  flex-wrap:wrap;
+  display:flex;gap:40px;align-items:center;flex-wrap:wrap
+}
+.about-box img{
+  width:100%;border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.15)
 }
 
-.about-img{
-  flex:1;
+/* HOW TO PLAY */
+.howto{
+  background:#fff;
+}
+.howto-title{
+  text-align:center;margin-bottom:40px
+}
+.howto-title span{
+  color:#8aa4b8;font-weight:bold;letter-spacing:2px
+}
+.rule-btn{
+  display:block;max-width:400px;margin:20px auto;
+  background:#0d4c7d;color:#fff;text-align:center;
+  padding:14px;border-radius:6px;text-decoration:none
 }
 
-.about-img img{
-  width:100%;
-  border-radius:14px;
-  box-shadow:0 10px 30px rgba(0,0,0,.15);
+.server-address{
+  text-align:center;font-size:22px;font-weight:bold;margin:40px 0
 }
 
-.about-text{
-  flex:1;
+.howto-box{
+  display:flex;gap:30px;flex-wrap:wrap
+}
+.howto-card{
+  flex:1;background:#f4f6f8;border-radius:12px;
+  padding:20px;box-shadow:0 6px 20px rgba(0,0,0,.08)
+}
+.howto-card h3{
+  margin-bottom:15px;color:#0d4c7d
+}
+.howto-card img{
+  width:100%;border-radius:10px
 }
 
-.about-text p{
-  margin-bottom:18px;
-}
-
-.about-text a{
-  display:inline-block;
-  margin-top:10px;
-  background:#1e88e5;
-  color:#fff;
-  padding:12px 24px;
-  border-radius:6px;
-  text-decoration:none;
-}
-
-.about-text a:hover{
-  background:#1565c0;
-}
-
-/* ===== フッター ===== */
+/* footer */
 footer{
-  background:#111;
-  color:#ccc;
-  text-align:center;
-  padding:30px 10px;
-  font-size:14px;
+  background:#111;color:#ccc;text-align:center;padding:30px 10px
 }
 
-/* ===== レスポンシブ ===== */
 @media(max-width:900px){
   .hero h2{font-size:32px}
-  .about-box{flex-direction:column}
+  .about-box,.howto-box{flex-direction:column}
 }
 </style>
 </head>
@@ -205,35 +120,54 @@ footer{
   <div class="hero-content">
     <h2>bananeko server</h2>
     <p>マインクラフトを通じて、みんなが集まれる場所を。</p>
-    <a href="join.html">参加方法を見る</a>
+    <a href="#howto">参加方法を見る</a>
   </div>
 </section>
 
-<section class="about">
-  <div class="about-inner">
-
-    <div class="about-title">
-      <span>ABOUT US</span>
+<!-- ABOUT -->
+<section class="section">
+  <div class="inner about-box">
+    <div>
+      <img src="https://raw.githubusercontent.com/bananeko345/bananeko/refs/heads/main/EmiOuakVMAIemdR.jpg">
+    </div>
+    <div>
       <h2>bananeko server とは？</h2>
+      <p>Java版・統合版対応のマインクラフトマルチプレイサーバーです。</p>
+      <p>初心者から上級者まで、安心して遊べるコミュニティを目指しています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO PLAY -->
+<section class="section howto" id="howto">
+  <div class="inner">
+
+    <div class="howto-title">
+      <span>HOW TO PLAY</span>
+      <h2>サーバーへの入り方</h2>
     </div>
 
-    <div class="about-box">
-      <div class="about-img">
-        <img src="https://raw.githubusercontent.com/bananeko345/bananeko/refs/heads/main/EmiOuakVMAIemdR.jpg" alt="bananeko server">
+    <p style="text-align:center">参加する前にルールを確認しよう！</p>
+    <a class="rule-btn" href="#">ルールを確認する</a>
+
+    <div class="server-address">
+      サーバーアドレス：<br>
+      bananeko.xgames.jp
+    </div>
+
+    <div class="howto-box">
+      <div class="howto-card">
+        <h3>Java版</h3>
+        <p>マルチプレイ → サーバー追加</p>
+        <p>アドレス：bananeko.xgames.jp</p>
+        <img src="https://via.placeholder.com/600x350?text=Java+Edition">
       </div>
 
-      <div class="about-text">
-        <p>
-          bananeko serverは、Java版・統合版の両方に対応したマインクラフトマルチプレイサーバーです。
-        </p>
-        <p>
-          ただ遊ぶだけのサーバーではなく、<b>人と人がつながるコミュニティ</b>を大切にしています。
-        </p>
-        <p>
-          初心者の方も、ベテランの方も、誰でも安心して参加できる環境を目指しています。
-        </p>
-
-        <a href="join.html">サーバーに参加する</a>
+      <div class="howto-card">
+        <h3>統合版（Bedrock）</h3>
+        <p>サーバー追加</p>
+        <p>アドレス：bananeko.xgames.jp<br>ポート：25565</p>
+        <img src="https://via.placeholder.com/600x350?text=Bedrock+Edition">
       </div>
     </div>
 
@@ -241,7 +175,7 @@ footer{
 </section>
 
 <footer>
-  © 2026 bananeko server
+© 2026 bananeko server
 </footer>
 
 </body>
