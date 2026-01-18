@@ -3,149 +3,143 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- ===== Google Search Console 確認 ===== -->
+<!-- Google Search Console -->
 <meta name="google-site-verification"
-      content="5gyn_ooNVz2XFZp-heBsin_Enh5kqpnlnxh0YrpgefU" />
+content="5gyn_ooNVz2XFZp-heBsin_Enh5kqpnlnxh0YrpgefU" />
 
-<!-- ===== SEO 基本 ===== -->
 <title>bananeko server | Java・統合版対応マイクラサーバー</title>
-<meta name="description" content="bananeko serverはJava版・統合版対応のマインクラフトサーバーです。初心者歓迎、誰でも無料で参加可能！">
-<meta name="keywords" content="bananeko, bananeko server, マイクラサーバー, Minecraft, Java版, 統合版">
-<meta name="author" content="bananeko server">
-<meta name="robots" content="index, follow">
-
-<!-- スマホ対応 -->
+<meta name="description" content="bananeko serverはJava版・統合版対応のマインクラフトサーバーです。">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ===== OGP ===== -->
-<meta property="og:title" content="bananeko server">
-<meta property="og:description" content="Java版・統合版対応マイクラサーバー">
-<meta property="og:url" content="https://bananeko.qzz.io/">
-<meta property="og:type" content="website">
-
 <style>
-*{box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 body{
-  margin:0;
   font-family:system-ui, sans-serif;
   color:#fff;
-  overflow-x:hidden;
 }
 
-/* ===== かっこいい背景 ===== */
-.bg{
+/* ===== ナビバー ===== */
+nav{
   position:fixed;
-  inset:0;
-  background:
-    radial-gradient(circle at 20% 20%, #ffcc0060, transparent 40%),
-    radial-gradient(circle at 80% 30%, #00ccff60, transparent 40%),
-    radial-gradient(circle at 50% 80%, #ff006060, transparent 40%),
-    linear-gradient(120deg, #050505, #0a0a0a);
-  animation:bgmove 15s infinite alternate ease-in-out;
-  z-index:-1;
+  top:0;left:0;
+  width:100%;
+  background:#fff;
+  color:#000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 40px;
+  z-index:10;
 }
-@keyframes bgmove{
-  0%{filter:hue-rotate(0deg)}
-  100%{filter:hue-rotate(40deg)}
+nav .logo{
+  font-size:22px;
+  font-weight:bold;
 }
-
-/* ===== レイアウト ===== */
-header{
-  padding:90px 20px;
-  text-align:center;
-  backdrop-filter:blur(6px);
-}
-header h1{
-  font-size:48px;
-  margin:0;
-  letter-spacing:2px;
-}
-header p{
-  font-size:18px;
-  opacity:.9;
-}
-
-section{
-  max-width:900px;
-  margin:40px auto;
-  padding:30px;
-  background:rgba(0,0,0,.55);
-  border-radius:18px;
-  box-shadow:0 0 30px #000;
-}
-
-h2{
-  border-left:4px solid #ffcc00;
-  padding-left:12px;
-}
-
-.buttons{
-  text-align:center;
-}
-
-a.button{
-  display:inline-block;
-  margin:12px;
-  padding:14px 30px;
-  background:linear-gradient(135deg,#ffcc00,#ff9900);
+nav a{
+  margin-left:20px;
   color:#000;
   text-decoration:none;
-  font-weight:bold;
-  border-radius:999px;
-  transition:.25s;
+  font-size:14px;
 }
-a.button:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 18px #ffcc00;
+nav a:hover{opacity:.6}
+
+/* ===== ヒーロー ===== */
+.hero{
+  height:100vh;
+  background:url("hero.jpg") center/cover no-repeat;
+  position:relative;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45);
+}
+.hero-content{
+  position:absolute;
+  bottom:120px;
+  left:60px;
+  max-width:600px;
+}
+.hero h1{
+  font-size:48px;
+  margin-bottom:16px;
+}
+.hero p{
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:24px;
+}
+.hero a{
+  display:inline-block;
+  background:#1e73be;
+  color:#fff;
+  padding:14px 28px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:bold;
+}
+.hero a:hover{opacity:.85}
+
+/* ===== セクション ===== */
+section{
+  padding:80px 20px;
+  max-width:1000px;
+  margin:auto;
+  color:#000;
+}
+section h2{
+  font-size:32px;
+  margin-bottom:20px;
+}
+section p{
+  font-size:16px;
+  line-height:1.8;
 }
 
-footer{
-  text-align:center;
-  padding:25px;
-  font-size:14px;
-  opacity:.75;
+/* スマホ対応 */
+@media(max-width:768px){
+  nav{padding:14px 20px}
+  .hero-content{
+    left:20px;
+    right:20px;
+    bottom:80px;
+  }
+  .hero h1{font-size:36px}
 }
 </style>
 </head>
 
 <body>
 
-<div class="bg"></div>
+<nav>
+  <div class="logo">bananeko server</div>
+  <div>
+    <a href="index.html">ホーム</a>
+    <a href="join.html">参加方法</a>
+    <a href="faq.html">FAQ</a>
+    <a href="https://discord.gg/XCv8DzxnJG" target="_blank">Discord</a>
+  </div>
+</nav>
 
-<header>
-  <h1>bananeko server</h1>
-  <p>Java版・統合版対応 マインクラフトサーバー</p>
-</header>
+<div class="hero">
+  <div class="hero-content">
+    <h1>bananeko server</h1>
+    <p>
+      あした、あさっても。<br>
+      マインクラフトを通して、みんなが楽しめる場所を。
+    </p>
+    <a href="join.html">参加方法を見る</a>
+  </div>
+</div>
 
 <section>
-  <h2>🌟 bananeko serverとは</h2>
+  <h2>bananeko serverとは</h2>
   <p>
-    bananeko serverは、Java版・統合版どちらからでも参加できる  
-    クロスプレイ対応のマインクラフトサーバーです。  
-    初心者から上級者まで、誰でも安心して楽しめます。
+    bananeko serverは、Java版・統合版対応のマインクラフトサーバーです。  
+    初心者から上級者まで、誰でも安心して参加できます。
   </p>
 </section>
-
-<section>
-  <h2>🎮 サーバーの特徴</h2>
-  <p>
-    ・サバイバルメイン<br>
-    ・みんなで協力プレイ<br>
-    ・イベント開催予定<br>
-    ・安心・安全な運営
-  </p>
-</section>
-
-<section class="buttons">
-  <h2>🚀 メニュー</h2>
-  <a class="button" href="join.html">参加方法</a>
-  <a class="button" href="FAQ.html">FAQ</a>
-  <a class="button" href="https://discord.gg/XCv8DzxnJG" target="_blank">Discord参加</a>
-</section>
-
-<footer>
-  © 2026 bananeko server
-</footer>
 
 </body>
 </html>
