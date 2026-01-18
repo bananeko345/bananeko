@@ -1,279 +1,209 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>bananeko server</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bananeko server | Minecraft Server</title>
 
-  <meta name="description" content="bananeko serverはJava版・統合版対応のマインクラフトサーバーです。">
-  <meta name="google-site-verification" content="5gyn_ooNVz2XFZp-heBsin_Enh5kqpnlnxh0YrpgefU" />
+<meta name="description" content="bananeko serverは誰でも参加できるマインクラフトサーバーです。Java版・統合版対応。">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", sans-serif;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI","Hiragino Kaku Gothic ProN",sans-serif;
+}
 
-    body {
-      background: #f4f6f8;
-      color: #222;
-      line-height: 1.7;
-    }
+body{
+  background:#f4f6f8;
+  color:#222;
+  line-height:1.7;
+}
 
-    /* header */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #fff;
-      box-shadow: 0 2px 10px rgba(0,0,0,.08);
-      z-index: 100;
-    }
+/* ===== HEADER ===== */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.1);
+  z-index:100;
+}
 
-    .header-inner {
-      max-width: 1200px;
-      margin: auto;
-      padding: 14px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #333;
-    }
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:bold;
+  color:#333;
+}
 
-    nav a:hover {
-      color: #1e88e5;
-    }
+nav a:hover{
+  color:#1e88e5;
+}
 
-    /* hero */
-    .hero {
-      height: 100vh;
-      background: url("https://raw.githubusercontent.com/bananeko345/bananeko/refs/heads/main/EmiOuakVMAIemdR.jpg") center / cover no-repeat;
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
+/* ===== HERO ===== */
+.hero{
+  height:100vh;
+  background:url("https://raw.githubusercontent.com/bananeko345/bananeko/refs/heads/main/EmiOuakVMAIemdR.jpg")
+    center/cover no-repeat;
+  position:relative;
+  display:flex;
+  align-items:center;
+}
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.65));
-    }
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.7));
+}
 
-    .hero-content {
-      position: relative;
-      max-width: 1200px;
-      margin: auto;
-      color: #fff;
-      padding: 0 20px;
-    }
+.hero-content{
+  position:relative;
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+  color:#fff;
+}
 
-    .hero h2 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
+.hero h2{
+  font-size:46px;
+  margin-bottom:10px;
+}
 
-    .hero p {
-      margin-bottom: 40px;
-    }
+.hero p{
+  font-size:18px;
+  opacity:.95;
+}
 
-    .hero a {
-      background: #1e88e5;
-      color: #fff;
-      padding: 14px 28px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 20px;
-    }
+.hero a{
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 30px;
+  background:#1e88e5;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:bold;
+}
 
-    /* common */
-    .section {
-      padding: 100px 20px;
-    }
+/* ===== SECTION ===== */
+.section{
+  padding:100px 20px;
+}
 
-    .inner {
-      max-width: 1200px;
-      margin: auto;
-    }
+.inner{
+  max-width:1200px;
+  margin:auto;
+}
 
-    /* about */
-    .about-box {
-      display: flex;
-      gap: 40px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+.section h2{
+  font-size:32px;
+  margin-bottom:20px;
+}
 
-    .about-box img {
-      width: 100%;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.15);
-    }
+/* ===== ABOUT ===== */
+.about-box{
+  display:flex;
+  gap:40px;
+  align-items:center;
+  flex-wrap:wrap;
+}
 
-    /* how to */
-    .howto {
-      background: #fff;
-    }
+.about-box img{
+  width:100%;
+  max-width:500px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
 
-    .howto-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+/* ===== JOIN ===== */
+.join{
+  background:#fff;
+}
 
-    .howto-title span {
-      color: #8aa4b8;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
+.server-ip{
+  text-align:center;
+  font-size:24px;
+  font-weight:bold;
+  margin:30px 0;
+}
 
-    .rule-btn {
-      display: block;
-      max-width: 420px;
-      margin: 20px auto;
-      background: #0d4c7d;
-      color: #fff;
-      text-align: center;
-      padding: 14px;
-      border-radius: 6px;
-      text-decoration: none;
-    }
+.join-box{
+  display:flex;
+  gap:30px;
+  flex-wrap:wrap;
+}
 
-    .server-address {
-      text-align: center;
-      font-size: 22px;
-      font-weight: bold;
-      margin: 40px 0;
-    }
+.join-card{
+  flex:1;
+  background:#f4f6f8;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,.1);
+}
 
-    .howto-box {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
+.join-card h3{
+  color:#0d4c7d;
+  margin-bottom:10px;
+}
 
-    .howto-card {
-      flex: 1;
-      background: #f4f6f8;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 6px 20px rgba(0,0,0,.08);
-    }
+/* ===== CTA ===== */
+.center{
+  text-align:center;
+}
 
-    .howto-card h3 {
-      color: #0d4c7d;
-      margin-bottom: 10px;
-    }
+.btn{
+  display:inline-block;
+  padding:14px 40px;
+  background:#0d4c7d;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:bold;
+}
 
-    /* friend */
-    .friend {
-      margin-top: 60px;
-      border: 3px solid #0d4c7d;
-      border-radius: 12px;
-      padding: 30px;
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      background: #fff;
-    }
+/* ===== FOOTER ===== */
+footer{
+  background:#f4f6f8;
+  border-top:1px solid #ddd;
+  padding:40px 10px;
+  text-align:center;
+}
 
-    .friend h3 {
-      background: #0d4c7d;
-      color: #fff;
-      display: inline-block;
-      padding: 6px 14px;
-      border-radius: 6px;
-      margin-bottom: 15px;
-    }
+.footer-links a{
+  margin:0 12px;
+  text-decoration:none;
+  font-weight:bold;
+  color:#555;
+}
 
-    .friend img {
-      width: 100%;
-      max-width: 520px;
-      border-radius: 10px;
-    }
+.footer-links a:hover{
+  color:#1e88e5;
+}
 
-    .friend-text {
-      flex: 1;
-    }
+.footer-copy{
+  margin-top:20px;
+  font-size:12px;
+  color:#999;
+}
 
-    /* FAQ & NEWS */
-    .center {
-      text-align: center;
-    }
-
-    .faq-btn {
-      display: inline-block;
-      background: #0d4c7d;
-      color: #fff;
-      padding: 14px 40px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .news {
-      max-width: 800px;
-      margin: 40px auto 0;
-    }
-
-    .news-item {
-      padding: 20px 0;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .news-item small {
-      color: #777;
-    }
-
-    /* footer */
-    footer {
-      background: #f4f6f8;
-      border-top: 1px solid #ddd;
-      text-align: center;
-      padding: 40px 10px;
-    }
-
-    .footer-links a {
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #555;
-    }
-
-    .footer-links a:hover {
-      color: #1e88e5;
-    }
-
-    .footer-note {
-      font-size: 13px;
-      color: #777;
-      margin: 20px 0;
-    }
-
-    .footer-copy {
-      font-size: 12px;
-      color: #999;
-    }
-
-    @media (max-width: 900px) {
-      .hero h2 {
-        font-size: 32px;
-      }
-      .about-box,
-      .howto-box,
-      .friend {
-        flex-direction: column;
-      }
-    }
-  </style>
+/* ===== MOBILE ===== */
+@media(max-width:900px){
+  .hero h2{font-size:32px;}
+  .about-box,.join-box{flex-direction:column;}
+}
+</style>
 </head>
 
 <body>
@@ -283,13 +213,73 @@
     <h1>bananeko server</h1>
     <nav>
       <a href="index.html">HOME</a>
-      <a href="join.html">参加方法</a>
+      <a href="guide.html">GUIDE</a>
+      <a href="rule.html">RULE</a>
       <a href="FAQ.html">FAQ</a>
     </nav>
   </div>
 </header>
 
-<!-- 以下そのまま続く -->
+<section class="hero">
+  <div class="hero-content">
+    <h2>ようこそ、bananeko serverへ</h2>
+    <p>誰でも参加できる、楽しくて安心なマインクラフトサーバー</p>
+    <a href="guide.html">参加方法を見る</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="inner">
+    <h2>bananeko serverとは？</h2>
+    <div class="about-box">
+      <img src="https://raw.githubusercontent.com/bananeko345/bananeko/refs/heads/main/EmiOuakVMAIemdR.jpg">
+      <p>
+        bananeko serverは、初心者から上級者まで誰でも楽しめる
+        マルチプレイ対応のMinecraftサーバーです。<br><br>
+        みんなで協力したり、雑談しながらのんびり遊べます。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section join">
+  <div class="inner">
+    <h2>参加方法</h2>
+    <div class="server-ip">サーバーIP：<br>bananeko.pages.dev</div>
+
+    <div class="join-box">
+      <div class="join-card">
+        <h3>① マイクラを起動</h3>
+        <p>Java版・統合版どちらでもOK</p>
+      </div>
+      <div class="join-card">
+        <h3>② サーバー追加</h3>
+        <p>IPを入力して保存</p>
+      </div>
+      <div class="join-card">
+        <h3>③ 参加！</h3>
+        <p>すぐに遊べます！</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section center">
+  <h2>詳しく知りたい方はこちら</h2>
+  <a class="btn" href="guide.html">GUIDEを見る</a>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">HOME</a>
+    <a href="guide.html">GUIDE</a>
+    <a href="rule.html">RULE</a>
+    <a href="FAQ.html">FAQ</a>
+  </div>
+  <div class="footer-copy">
+    © bananeko server
+  </div>
+</footer>
 
 </body>
 </html>
