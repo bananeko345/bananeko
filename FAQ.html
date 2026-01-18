@@ -3,75 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <title>FAQ | bananeko server</title>
-
-<!-- SEO -->
-<meta name="description" content="bananeko serverのよくある質問ページ。参加方法、対応機種、ルールなどをわかりやすく解説しています。">
-<meta name="keywords" content="bananeko, bananeko server, マイクラサーバー, FAQ, Minecraft">
-<meta name="robots" content="index, follow">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
   margin:0;
   font-family:"Segoe UI",Arial,sans-serif;
-  background:linear-gradient(135deg,#e3f2fd,#ffffff);
-  color:#0d47a1;
+  background:linear-gradient(180deg,#eaf4ff,#ffffff);
+  color:#0a2540;
 }
 
 header{
   text-align:center;
-  padding:60px 20px;
-  background:linear-gradient(135deg,#2196f3,#64b5f6);
-  color:#fff;
+  padding:60px 20px 40px;
 }
-
-h1{font-size:42px;margin-bottom:10px}
+h1{
+  font-size:42px;
+  margin:0;
+  color:#1565c0;
+}
+header p{
+  color:#4f6f8f;
+  margin-top:10px;
+}
 
 .container{
   max-width:900px;
   margin:auto;
-  padding:30px 20px;
+  padding:20px;
 }
 
 .faq{
-  background:#ffffff;
-  border-radius:16px;
-  padding:25px;
-  margin-bottom:25px;
-  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  background:#fff;
+  border-radius:18px;
+  padding:24px 30px;
+  margin-bottom:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  cursor:pointer;
 }
 
 .question{
   font-size:20px;
   font-weight:bold;
-  color:#1565c0;
+  color:#1976d2;
+  display:flex;
+  justify-content:space-between;
 }
 
 .answer{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:.3s;
+  line-height:1.7;
+  margin-top:0;
+}
+
+.faq.open .answer{
+  max-height:200px;
+  opacity:1;
   margin-top:12px;
-  line-height:1.8;
-  color:#333;
 }
 
 .back{
   display:inline-block;
-  margin-top:30px;
+  margin:30px auto;
   padding:14px 36px;
-  background:#2196f3;
+  background:#1976d2;
   color:#fff;
   text-decoration:none;
-  border-radius:999px;
-  font-weight:bold;
-  box-shadow:0 6px 15px rgba(33,150,243,.4);
+  border-radius:40px;
+  font-size:18px;
 }
-
-.back:hover{opacity:.9}
 
 footer{
   text-align:center;
-  padding:30px 0;
-  color:#777;
+  margin:40px 0 25px;
+  color:#6b8aa5;
 }
 </style>
 </head>
@@ -80,58 +88,47 @@ footer{
 
 <header>
   <h1>FAQ</h1>
-  <p>よくある質問｜bananeko server</p>
+  <p>よくある質問 / bananeko server</p>
 </header>
 
 <div class="container">
 
   <div class="faq">
-    <div class="question">Q. 誰でも参加できますか？</div>
+    <div class="question">Q. 誰でも参加できますか？ <span>＋</span></div>
+    <div class="answer">はい、誰でも参加可能です。初心者の方も大歓迎です。</div>
+  </div>
+
+  <div class="faq">
+    <div class="question">Q. Java版と統合版は一緒に遊べますか？ <span>＋</span></div>
+    <div class="answer">はい、Java版・Bedrock版どちらからでも参加できます。</div>
+  </div>
+
+  <div class="faq">
+    <div class="question">Q. サーバーIPは？ <span>＋</span></div>
     <div class="answer">
-      はい、誰でも参加できます。<br>
-      初心者の方も安心して遊べるマイクラサーバーです。
+      Java：bananeko.xgames.jp<br>
+      Bedrock：bananeko.xgames.jp（Port:25565）
     </div>
   </div>
 
   <div class="faq">
-    <div class="question">Q. Java版と統合版は一緒に遊べますか？</div>
-    <div class="answer">
-      はい、Java版・統合版（Bedrock）どちらからでも参加可能です。
-    </div>
-  </div>
-
-  <div class="faq">
-    <div class="question">Q. サーバーIPは？</div>
-    <div class="answer">
-      Java版：bananeko.qzz.io<br>
-      統合版：bananeko.qzz.io（Port: 25565）
-    </div>
-  </div>
-
-  <div class="faq">
-    <div class="question">Q. ルールはありますか？</div>
-    <div class="answer">
-      チート・荒らし・迷惑行為は禁止です。<br>
-      詳細なルールはDiscordで案内しています。
-    </div>
-  </div>
-
-  <div class="faq">
-    <div class="question">Q. 困ったときはどうすればいい？</div>
-    <div class="answer">
-      Discordに参加して、サポートチャンネルへご連絡ください。
-    </div>
+    <div class="question">Q. ルールはありますか？ <span>＋</span></div>
+    <div class="answer">荒らし・チートは禁止です。詳細はDiscordをご確認ください。</div>
   </div>
 
   <div style="text-align:center;">
-    <a class="back" href="index.html">トップに戻る</a>
+    <a class="back" href="index.html">← トップに戻る</a>
   </div>
 
 </div>
 
-<footer>
-© bananeko server
-</footer>
+<footer>© bananeko server</footer>
+
+<script>
+document.querySelectorAll(".faq").forEach(f=>{
+  f.onclick=()=>f.classList.toggle("open");
+});
+</script>
 
 </body>
 </html>
