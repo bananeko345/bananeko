@@ -6,117 +6,80 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{box-sizing:border-box}
-
 body{
   margin:0;
   font-family:"Segoe UI",Arial,sans-serif;
-  color:#fff;
-  background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.85)),
-    url("https://raw.githubusercontent.com/bananeko345/bananeko/refs/heads/main/images.jpg");
-  background-size:cover;
-  background-position:center;
-  min-height:100vh;
+  background:linear-gradient(180deg,#eaf4ff,#ffffff);
+  color:#0a2540;
 }
 
-/* ===== HEADER ===== */
 header{
   text-align:center;
-  padding:70px 20px 40px;
+  padding:60px 20px 40px;
 }
 h1{
-  font-size:44px;
+  font-size:42px;
   margin:0;
-  letter-spacing:2px;
+  color:#1565c0;
 }
 header p{
-  opacity:.8;
+  color:#4f6f8f;
   margin-top:10px;
 }
 
-/* ===== LAYOUT ===== */
 .container{
   max-width:900px;
   margin:auto;
   padding:20px;
 }
 
-/* ===== FAQ CARD ===== */
 .faq{
-  background:rgba(255,255,255,.08);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  border-radius:20px;
-  padding:25px 30px;
-  margin-bottom:22px;
-  box-shadow:0 15px 35px rgba(0,0,0,.4);
+  background:#fff;
+  border-radius:18px;
+  padding:24px 30px;
+  margin-bottom:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
   cursor:pointer;
-  transition:.25s;
-}
-.faq:hover{
-  transform:scale(1.01);
 }
 
-/* ===== QUESTION ===== */
 .question{
   font-size:20px;
   font-weight:bold;
-  color:#9dffc0;
+  color:#1976d2;
   display:flex;
   justify-content:space-between;
-  align-items:center;
 }
 
-/* + icon */
-.question span{
-  font-size:26px;
-  transition:.3s;
-}
-
-/* ===== ANSWER ===== */
 .answer{
   max-height:0;
   overflow:hidden;
-  line-height:1.8;
   opacity:0;
-  transition:.35s;
+  transition:.3s;
+  line-height:1.7;
   margin-top:0;
 }
 
-/* OPEN STATE */
 .faq.open .answer{
-  max-height:300px;
+  max-height:200px;
   opacity:1;
-  margin-top:14px;
-}
-.faq.open .question span{
-  transform:rotate(45deg);
+  margin-top:12px;
 }
 
-/* ===== BACK BUTTON ===== */
 .back{
   display:inline-block;
   margin:30px auto;
-  padding:16px 38px;
-  background:linear-gradient(135deg,#4caf50,#2e8b57);
+  padding:14px 36px;
+  background:#1976d2;
   color:#fff;
   text-decoration:none;
   border-radius:40px;
   font-size:18px;
-  transition:.25s;
-}
-.back:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 20px rgba(76,175,80,.7);
 }
 
-/* ===== FOOTER ===== */
 footer{
   text-align:center;
-  opacity:.6;
   margin:40px 0 25px;
-  font-size:14px;
+  color:#6b8aa5;
 }
 </style>
 </head>
@@ -131,56 +94,26 @@ footer{
 <div class="container">
 
   <div class="faq">
-    <div class="question">
-      Q. 誰でも参加できますか？
-      <span>＋</span>
-    </div>
+    <div class="question">Q. 誰でも参加できますか？ <span>＋</span></div>
+    <div class="answer">はい、誰でも参加可能です。初心者の方も大歓迎です。</div>
+  </div>
+
+  <div class="faq">
+    <div class="question">Q. Java版と統合版は一緒に遊べますか？ <span>＋</span></div>
+    <div class="answer">はい、Java版・Bedrock版どちらからでも参加できます。</div>
+  </div>
+
+  <div class="faq">
+    <div class="question">Q. サーバーIPは？ <span>＋</span></div>
     <div class="answer">
-      はい、誰でも参加可能です！<br>
-      初心者の方も大歓迎です。
+      Java：bananeko.xgames.jp<br>
+      Bedrock：bananeko.xgames.jp（Port:25565）
     </div>
   </div>
 
   <div class="faq">
-    <div class="question">
-      Q. Java版と統合版は一緒に遊べますか？
-      <span>＋</span>
-    </div>
-    <div class="answer">
-      はい、Java版・統合版（Bedrock）どちらからでも参加できます。
-    </div>
-  </div>
-
-  <div class="faq">
-    <div class="question">
-      Q. サーバーIPは？
-      <span>＋</span>
-    </div>
-    <div class="answer">
-      Java版：bananeko.xgames.jp<br>
-      統合版：bananeko.xgames.jp（Port: 25565）
-    </div>
-  </div>
-
-  <div class="faq">
-    <div class="question">
-      Q. ルールはありますか？
-      <span>＋</span>
-    </div>
-    <div class="answer">
-      チート・荒らし・迷惑行為は禁止です。<br>
-      詳細はDiscordで案内しています。
-    </div>
-  </div>
-
-  <div class="faq">
-    <div class="question">
-      Q. 困ったときはどうすればいい？
-      <span>＋</span>
-    </div>
-    <div class="answer">
-      Discordに参加して、サポートへ連絡してください！
-    </div>
+    <div class="question">Q. ルールはありますか？ <span>＋</span></div>
+    <div class="answer">荒らし・チートは禁止です。詳細はDiscordをご確認ください。</div>
   </div>
 
   <div style="text-align:center;">
@@ -189,15 +122,11 @@ footer{
 
 </div>
 
-<footer>
-© bananeko server
-</footer>
+<footer>© bananeko server</footer>
 
 <script>
-document.querySelectorAll(".faq").forEach(faq=>{
-  faq.addEventListener("click",()=>{
-    faq.classList.toggle("open");
-  });
+document.querySelectorAll(".faq").forEach(f=>{
+  f.onclick=()=>f.classList.toggle("open");
 });
 </script>
 
