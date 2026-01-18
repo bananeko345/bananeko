@@ -3,203 +3,249 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bananeko server</title>
 
-<title>bananeko server | Minecraft Server</title>
-
-<meta name="description" content="bananeko server は誰でも参加できるマインクラフトサーバーです。Java版・統合版対応。">
-<meta name="robots" content="index, follow">
-
+<meta name="description" content="bananeko serverはJava版・統合版対応のマインクラフトサーバーです。">
 <meta name="google-site-verification" content="5gyn_ooNVz2XFZp-heBsin_Enh5kqpnlnxh0YrpgefU" />
 
 <style>
-body{
-  margin:0;
-  font-family:"Segoe UI",sans-serif;
-  background:#f3f6f9;
-  color:#222;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",sans-serif}
+body{background:#f4f6f8;color:#222;line-height:1.7}
 
-/* ===== HERO ===== */
+/* header */
+header{
+  position:fixed;top:0;width:100%;background:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);z-index:100
+}
+.header-inner{
+  max-width:1200px;margin:auto;padding:14px 20px;
+  display:flex;justify-content:space-between;align-items:center
+}
+nav a{margin-left:20px;text-decoration:none;color:#333}
+nav a:hover{color:#1e88e5}
+
+/* hero */
 .hero{
   height:100vh;
   background:url("https://raw.githubusercontent.com/bananeko345/bananeko/refs/heads/main/EmiOuakVMAIemdR.jpg") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
+  position:relative;display:flex;align-items:center
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.65))
+}
+.hero-content{
+  position:relative;max-width:1200px;margin:auto;
+  color:#fff;padding:0 20px
+}
+.hero h2{font-size:42px;margin-bottom:10px}
+.hero p{margin-bottom:40px}
+.hero a{
+  background:#1e88e5;color:#fff;
+  padding:14px 28px;border-radius:6px;
+  text-decoration:none;font-weight:bold;
+  display:inline-block;
+  margin-top:20px
 }
 
-.hero-inner{
-  background:rgba(0,0,0,0.55);
-  padding:40px;
-  border-radius:12px;
-  color:#fff;
+/* common */
+.section{padding:100px 20px}
+.inner{max-width:1200px;margin:auto}
+
+/* about */
+.about-box{
+  display:flex;gap:40px;align-items:center;flex-wrap:wrap
+}
+.about-box img{
+  width:100%;border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.15)
 }
 
-.hero h1{
-  font-size:42px;
-  margin-bottom:10px;
+/* how to */
+.howto{background:#fff}
+.howto-title{text-align:center;margin-bottom:40px}
+.howto-title span{
+  color:#8aa4b8;font-weight:bold;letter-spacing:2px
 }
-
-.hero p{
-  font-size:18px;
-  opacity:0.9;
+.rule-btn{
+  display:block;max-width:420px;margin:20px auto;
+  background:#0d4c7d;color:#fff;text-align:center;
+  padding:14px;border-radius:6px;text-decoration:none
 }
-
-/* ===== SECTION ===== */
-section{
-  padding:80px 20px;
-  max-width:1100px;
-  margin:auto;
+.server-address{
+  text-align:center;font-size:22px;font-weight:bold;margin:40px 0
 }
-
-h2{
-  text-align:center;
-  font-size:28px;
-  margin-bottom:40px;
+.howto-box{
+  display:flex;gap:30px;flex-wrap:wrap
 }
+.howto-card{
+  flex:1;background:#f4f6f8;border-radius:12px;
+  padding:20px;box-shadow:0 6px 20px rgba(0,0,0,.08)
+}
+.howto-card h3{color:#0d4c7d;margin-bottom:10px}
 
-/* ===== JOIN ===== */
-.join-box{
-  background:#fff;
+/* friend */
+.friend{
+  margin-top:60px;
+  border:3px solid #0d4c7d;
   border-radius:12px;
   padding:30px;
-  margin-bottom:30px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  display:flex;gap:30px;flex-wrap:wrap;
+  background:#fff;
 }
-
-.join-box h3{
-  margin-top:0;
+.friend h3{
+  background:#0d4c7d;color:#fff;
+  display:inline-block;padding:6px 14px;
+  border-radius:6px;margin-bottom:15px;
 }
+.friend img{width:100%;max-width:520px;border-radius:10px}
+.friend-text{flex:1}
 
-.join-box p{
-  line-height:1.7;
-}
-
-/* ===== FAQ BUTTON ===== */
+/* FAQ & NEWS */
+.center{text-align:center}
 .faq-btn{
-  display:block;
-  width:220px;
-  margin:30px auto 0;
-  padding:14px;
-  text-align:center;
-  background:#0d4c7d;
-  color:#fff;
+  display:inline-block;
+  background:#0d4c7d;color:#fff;
+  padding:14px 40px;
+  border-radius:6px;
   text-decoration:none;
-  border-radius:8px;
   font-weight:bold;
 }
-
-/* ===== NEWS ===== */
+.news{
+  max-width:800px;margin:40px auto 0
+}
 .news-item{
-  padding:20px 0;
-  border-bottom:1px solid #ddd;
+  padding:20px 0;border-bottom:1px solid #ddd
 }
+.news-item small{color:#777}
 
-.news-item small{
-  color:#777;
+/* footer */
+footer{
+  background:#f4f6f8;
+  border-top:1px solid #ddd;
+  text-align:center;padding:40px 10px
 }
-
-/* ===== FOOTER ===== */
-.site-footer{
-  background:#f3f6f9;
-  border-top:1px solid #e0e6ed;
-  padding:40px 20px;
-  text-align:center;
+.footer-links a{
+  margin:0 12px;text-decoration:none;
+  font-weight:bold;color:#555
 }
-
-.footer-sns a{
-  margin:0 12px;
-  text-decoration:none;
-  font-weight:bold;
-  color:#6b7c8f;
-}
-
-.footer-sns a:hover{
-  color:#0d4c7d;
-}
-
+.footer-links a:hover{color:#1e88e5}
 .footer-note{
-  font-size:13px;
-  color:#7a8896;
-  margin:20px 0;
+  font-size:13px;color:#777;margin:20px 0
 }
+.footer-copy{font-size:12px;color:#999}
 
-.footer-copy{
-  font-size:12px;
-  color:#9aa7b4;
+@media(max-width:900px){
+  .hero h2{font-size:32px}
+  .about-box,.howto-box,.friend{flex-direction:column}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-inner">
+<header>
+  <div class="header-inner">
     <h1>bananeko server</h1>
-    <p>みんなで楽しむ Minecraft サーバー</p>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="join.html">参加方法</a>
+      <a href="FAQ.html">FAQ</a>
+    </nav>
   </div>
-</div>
+</header>
 
-<!-- JOIN -->
-<section>
-  <h2>参加方法</h2>
-
-  <div class="join-box">
-    <h3>Java版 / 統合版</h3>
-    <p>
-      サーバーアドレス：<b>bananeko.qzz.io</b><br>
-      バージョン：最新対応
-    </p>
-  </div>
-
-  <div class="join-box">
-    <h3>フレンドから参加（統合版）</h3>
-    <p>
-      Minecraft 統合版限定で、フレンド申請から参加できます。<br>
-      MCID：<b>bananekoSRV3</b><br>
-      フレンド追加後、数分待つとフレンドタブに表示されます。
-    </p>
+<section class="hero">
+  <div class="hero-content">
+    <h2>bananeko server</h2>
+    <p>マインクラフトを通じて、みんなが集まれる場所を。</p>
+    <a href="#howto">参加方法を見る</a>
   </div>
 </section>
 
-<!-- FAQ -->
-<section>
+<section class="section">
+  <div class="inner about-box">
+    <img src="https://raw.githubusercontent.com/bananeko345/bananeko/refs/heads/main/EmiOuakVMAIemdR.jpg">
+    <div>
+      <h2>bananeko server とは？</h2>
+      <p>Java版・統合版対応のマインクラフトサーバーです。</p>
+      <p>初心者でも安心して参加できるコミュニティを目指しています。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section howto" id="howto">
+  <div class="inner">
+
+    <div class="howto-title">
+      <span>HOW TO PLAY</span>
+      <h2>サーバーへの入り方</h2>
+    </div>
+
+    <a class="rule-btn" href="#">ルールを確認する</a>
+
+    <div class="server-address">
+      サーバーアドレス<br>
+      bananeko.xgames.jp
+    </div>
+
+    <div class="howto-box">
+      <div class="howto-card">
+        <h3>Java版</h3>
+        <p>マルチプレイ → サーバー追加</p>
+        <p>アドレス：bananeko.xgames.jp</p>
+      </div>
+      <div class="howto-card">
+        <h3>統合版（Bedrock）</h3>
+        <p>アドレス：bananeko.xgames.jp<br>ポート：25565</p>
+      </div>
+    </div>
+
+    <div class="friend">
+      <div>
+        <h3>フレンド申請での参加方法</h3>
+        <img src="https://via.placeholder.com/520x300">
+      </div>
+      <div class="friend-text">
+        <p>統合版限定でフレンド申請から参加できます。</p>
+        <p><b>MCID：bananekoSRV3</b></p>
+        <p>数分後、フレンドタブに表示されます。</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section center">
   <h2>よくある質問</h2>
   <a class="faq-btn" href="FAQ.html">FAQを見る</a>
-</section>
 
-<!-- NEWS -->
-<section>
-  <h2>最近のニュース</h2>
-
-  <div class="news-item">
-    <small>2026/01/18</small>
-    <p>bananeko server 公式サイトを公開しました。</p>
-  </div>
-
-  <div class="news-item">
-    <small>2026/01/10</small>
-    <p>サーバーの安定性を改善しました。</p>
+  <h2 style="margin-top:80px">最近のニュース</h2>
+  <div class="news">
+    <div class="news-item">
+      <small>2026/01/18</small>
+      <p>公式サイトを公開しました。</p>
+    </div>
+    <div class="news-item">
+      <small>2026/01/10</small>
+      <p>サーバーの安定性を改善しました。</p>
+    </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-sns">
+<footer>
+  <div class="footer-links">
     <a href="#">X</a>
     <a href="#">Discord</a>
     <a href="#">YouTube</a>
   </div>
 
   <p class="footer-note">
-    ※ bananeko server は Mojang Studios 公式のサービスではありません。<br>
-    Minecraft は Mojang Studios の登録商標です。
+    Not an official Minecraft server. Not approved by or associated with Mojang.
   </p>
 
   <p class="footer-copy">
-    © 2026 bananeko server. All Rights Reserved.
+    © 2026 bananeko server All Rights Reserved.
   </p>
 </footer>
 
