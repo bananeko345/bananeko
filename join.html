@@ -3,34 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <title>参加方法 | bananeko server</title>
+
+<!-- SEO -->
+<meta name="description" content="bananeko serverの参加方法ページ。Java版・統合版どちらでも参加できます。IP・手順をわかりやすく解説。">
+<meta name="keywords" content="bananeko, bananeko server, マイクラ参加方法, Minecraft サーバー">
+<meta name="robots" content="index, follow">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
   margin:0;
   font-family:"Segoe UI",Arial,sans-serif;
-  background:linear-gradient(180deg,#eaf4ff,#ffffff);
-  color:#0a2540;
+  background:linear-gradient(135deg,#ffffff,#e3f2fd);
+  color:#0d47a1;
 }
 
 header{
   text-align:center;
-  padding:60px 20px 40px;
+  padding:60px 20px;
+  background:linear-gradient(135deg,#1976d2,#64b5f6);
+  color:#fff;
 }
-header h1{
-  font-size:42px;
-  margin:0;
-  color:#1565c0;
-}
-header p{
-  color:#4f6f8f;
-  margin-top:10px;
-}
+
+h1{font-size:42px}
 
 .container{
   max-width:900px;
   margin:auto;
-  padding:20px;
+  padding:30px 20px;
 }
 
 .card{
@@ -38,77 +39,40 @@ header p{
   border-radius:18px;
   padding:30px;
   margin-bottom:30px;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  box-shadow:0 12px 30px rgba(0,0,0,.1);
 }
 
 h2{
-  margin-top:0;
-  color:#1976d2;
+  color:#1565c0;
+  margin-bottom:15px;
 }
 
-.server{
-  border:1px solid #e3f2fd;
-  border-radius:14px;
-  padding:20px;
-  margin-top:20px;
-  background:#f9fcff;
-}
-
-.label{
-  font-size:14px;
-  color:#1976d2;
+.ip{
+  background:#e3f2fd;
+  padding:15px;
+  border-radius:12px;
+  font-size:18px;
+  color:#0d47a1;
   font-weight:bold;
-}
-
-.value{
-  font-size:20px;
-  margin:10px 0;
-  word-break:break-all;
-}
-
-.copy{
-  padding:10px 24px;
-  border:none;
-  border-radius:30px;
-  background:#1976d2;
-  color:#fff;
-  cursor:pointer;
-  transition:.2s;
-}
-.copy:hover{
-  background:#0d47a1;
 }
 
 .back{
   display:inline-block;
-  margin-top:20px;
+  margin-top:30px;
   padding:14px 36px;
   background:#1976d2;
   color:#fff;
   text-decoration:none;
-  border-radius:40px;
-  font-size:18px;
+  border-radius:999px;
+  font-weight:bold;
+  box-shadow:0 6px 15px rgba(25,118,210,.4);
 }
 
 footer{
   text-align:center;
-  margin:40px 0 25px;
-  color:#6b8aa5;
+  padding:30px 0;
+  color:#777;
 }
-
-.toast{
-  position:fixed;
-  bottom:20px;
-  left:50%;
-  transform:translateX(-50%);
-  background:#1976d2;
-  color:#fff;
-  padding:10px 22px;
-  border-radius:30px;
-  opacity:0;
-  transition:.3s;
-}
-.toast.show{opacity:1}
 </style>
 </head>
 
@@ -116,60 +80,41 @@ footer{
 
 <header>
   <h1>参加方法</h1>
-  <p>bananeko server</p>
+  <p>bananeko server に参加しよう</p>
 </header>
 
 <div class="container">
 
   <div class="card">
-    <h2>対応バージョン</h2>
-    <p>Java Edition / Bedrock（統合版）</p>
+    <h2>① Minecraftを起動</h2>
+    <p>Java版・統合版（Bedrock）どちらでも参加できます。</p>
   </div>
 
   <div class="card">
-    <h2>サーバー情報</h2>
-
-    <div class="server">
-      <div class="label">Java Edition</div>
-      <div class="value" id="java">bananeko.xgames.jp</div>
-      <button class="copy" onclick="copyText('java')">コピー</button>
-    </div>
-
-    <div class="server">
-      <div class="label">Bedrock / 統合版</div>
-      <div class="value" id="bedrock">
-        bananeko.xgames.jp<br>Port: 25565
-      </div>
-      <button class="copy" onclick="copyText('bedrock')">コピー</button>
-    </div>
-
-    <div class="server">
-      <div class="label">フレンドから参加</div>
-      <div class="value" id="friend">bananekoSRV3</div>
-      <button class="copy" onclick="copyText('friend')">コピー</button>
+    <h2>② サーバーを追加</h2>
+    <div class="ip">
+      サーバーIP：bananeko.qzz.io<br>
+      （統合版 Port：25565）
     </div>
   </div>
 
+  <div class="card">
+    <h2>③ サーバーに参加！</h2>
+    <p>
+      あとはサーバーに接続するだけ！<br>
+      みんなで楽しいマイクラ生活を始めましょう。
+    </p>
+  </div>
+
   <div style="text-align:center;">
-    <a class="back" href="index.html">← トップに戻る</a>
+    <a class="back" href="index.html">トップに戻る</a>
   </div>
 
 </div>
 
-<footer>© bananeko server</footer>
-
-<div class="toast" id="toast">コピーしました！</div>
-
-<script>
-const toast=document.getElementById("toast");
-function copyText(id){
-  navigator.clipboard.writeText(
-    document.getElementById(id).innerText.replace(/\n/g," ")
-  );
-  toast.classList.add("show");
-  setTimeout(()=>toast.classList.remove("show"),1200);
-}
-</script>
+<footer>
+© bananeko server
+</footer>
 
 </body>
 </html>
