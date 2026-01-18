@@ -6,135 +6,109 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{box-sizing:border-box}
-
 body{
   margin:0;
   font-family:"Segoe UI",Arial,sans-serif;
-  color:#fff;
-  text-align:center;
-  background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.85)),
-    url("https://raw.githubusercontent.com/bananeko345/bananeko/refs/heads/main/images.jpg");
-  background-size:cover;
-  background-position:center;
-  min-height:100vh;
+  background:linear-gradient(180deg,#eaf4ff,#ffffff);
+  color:#0a2540;
 }
 
-/* ===== HEADER ===== */
 header{
-  padding:70px 20px 40px;
+  text-align:center;
+  padding:60px 20px 40px;
 }
 header h1{
-  font-size:46px;
+  font-size:42px;
   margin:0;
-  letter-spacing:2px;
+  color:#1565c0;
 }
 header p{
-  opacity:.8;
+  color:#4f6f8f;
   margin-top:10px;
 }
 
-/* ===== LAYOUT ===== */
 .container{
   max-width:900px;
   margin:auto;
   padding:20px;
 }
 
-/* ===== GLASS BOX ===== */
-.box{
-  background:rgba(255,255,255,.08);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  border-radius:20px;
-  padding:35px 25px;
-  margin-bottom:35px;
-  box-shadow:0 20px 40px rgba(0,0,0,.4);
+.card{
+  background:#fff;
+  border-radius:18px;
+  padding:30px;
+  margin-bottom:30px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
 h2{
   margin-top:0;
-  color:#6aff8f;
-  letter-spacing:1px;
+  color:#1976d2;
 }
 
-/* ===== SERVER BOX ===== */
-.server-box{
-  background:rgba(0,0,0,.35);
+.server{
+  border:1px solid #e3f2fd;
   border-radius:14px;
   padding:20px;
-  margin:22px 0;
+  margin-top:20px;
+  background:#f9fcff;
 }
 
 .label{
   font-size:14px;
-  color:#9dffc0;
-  letter-spacing:1px;
-}
-
-.value{
-  font-size:22px;
-  margin:10px 0 14px;
-  word-break:break-all;
+  color:#1976d2;
   font-weight:bold;
 }
 
-/* ===== BUTTONS ===== */
-button.copy{
-  padding:10px 26px;
-  border:none;
-  border-radius:30px;
-  background:linear-gradient(135deg,#4caf50,#2e8b57);
-  color:#fff;
-  cursor:pointer;
-  font-size:15px;
-  transition:.25s;
-}
-button.copy:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 15px rgba(76,175,80,.6);
+.value{
+  font-size:20px;
+  margin:10px 0;
+  word-break:break-all;
 }
 
-a.button{
+.copy{
+  padding:10px 24px;
+  border:none;
+  border-radius:30px;
+  background:#1976d2;
+  color:#fff;
+  cursor:pointer;
+  transition:.2s;
+}
+.copy:hover{
+  background:#0d47a1;
+}
+
+.back{
   display:inline-block;
-  margin-top:10px;
-  padding:16px 36px;
-  background:linear-gradient(135deg,#4caf50,#2e8b57);
+  margin-top:20px;
+  padding:14px 36px;
+  background:#1976d2;
   color:#fff;
   text-decoration:none;
   border-radius:40px;
   font-size:18px;
-  transition:.25s;
-}
-a.button:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 20px rgba(76,175,80,.7);
 }
 
-/* ===== TOAST ===== */
+footer{
+  text-align:center;
+  margin:40px 0 25px;
+  color:#6b8aa5;
+}
+
 .toast{
   position:fixed;
-  bottom:30px;
+  bottom:20px;
   left:50%;
-  transform:translateX(-50%) scale(.9);
-  background:rgba(0,0,0,.85);
-  padding:12px 26px;
+  transform:translateX(-50%);
+  background:#1976d2;
+  color:#fff;
+  padding:10px 22px;
   border-radius:30px;
   opacity:0;
   transition:.3s;
 }
-.toast.show{
-  opacity:1;
-  transform:translateX(-50%) scale(1);
-}
-
-/* ===== FOOTER ===== */
-footer{
-  opacity:.6;
-  margin:40px 0 25px;
-  font-size:14px;
-}
+.toast.show{opacity:1}
 </style>
 </head>
 
@@ -147,21 +121,21 @@ footer{
 
 <div class="container">
 
-  <div class="box">
+  <div class="card">
     <h2>対応バージョン</h2>
     <p>Java Edition / Bedrock（統合版）</p>
   </div>
 
-  <div class="box">
+  <div class="card">
     <h2>サーバー情報</h2>
 
-    <div class="server-box">
+    <div class="server">
       <div class="label">Java Edition</div>
       <div class="value" id="java">bananeko.xgames.jp</div>
       <button class="copy" onclick="copyText('java')">コピー</button>
     </div>
 
-    <div class="server-box">
+    <div class="server">
       <div class="label">Bedrock / 統合版</div>
       <div class="value" id="bedrock">
         bananeko.xgames.jp<br>Port: 25565
@@ -169,14 +143,16 @@ footer{
       <button class="copy" onclick="copyText('bedrock')">コピー</button>
     </div>
 
-    <div class="server-box">
+    <div class="server">
       <div class="label">フレンドから参加</div>
       <div class="value" id="friend">bananekoSRV3</div>
       <button class="copy" onclick="copyText('friend')">コピー</button>
     </div>
   </div>
 
-  <a class="button" href="index.html">← トップに戻る</a>
+  <div style="text-align:center;">
+    <a class="back" href="index.html">← トップに戻る</a>
+  </div>
 
 </div>
 
@@ -185,8 +161,7 @@ footer{
 <div class="toast" id="toast">コピーしました！</div>
 
 <script>
-const toast = document.getElementById("toast");
-
+const toast=document.getElementById("toast");
 function copyText(id){
   navigator.clipboard.writeText(
     document.getElementById(id).innerText.replace(/\n/g," ")
